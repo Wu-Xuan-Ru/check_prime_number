@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<span th:each="element : ${list}"  th:utext="${element.key % 10 == 0} ? ${element.key} + '&nbsp;' + '<br>' : ${element.key} + '&nbsp;'" th:style="${element.value.equals('true')} ? 'background: green'"></span>
+<br>
+<h1>Try again!:</h1>
+<form th:action="@{/allprime}" method="post">
+    <input type="text" name = "num">
+    <input type="submit">
+</form>
+</body>
+</html>

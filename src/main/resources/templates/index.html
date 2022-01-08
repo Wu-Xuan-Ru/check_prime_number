@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check prime number</title>
+    <style>
+        body{
+            text-align: center;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<h1>Enter a number to check if it is a prime number!:</h1>
+<form th:action="@{/oneprime}" method="post">
+    <input type="text" name = "num">
+    <input type="submit">
+</form><br>
+<h1>Enter a number to check all the prime number less than or equals this number!:</h1>
+<form th:action="@{/allprime}" method="post">
+    <input type="text" name = "num">
+    <input type="submit">
+</form>
+
+</body>
+</html>
