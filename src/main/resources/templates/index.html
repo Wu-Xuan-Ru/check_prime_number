@@ -12,12 +12,12 @@
     </style>
 </head>
 <body>
-<h1>Enter a number to check if it is a prime number!:</h1>
+<h1>Enter a number, and I can tell you if it's a prime number!:</h1>
 <form th:action="@{/oneprime}" method="post">
     <input type="text" name = "num">
     <input type="submit">
 </form><br>
-<h1>Enter a number to check all the prime number less than or equals this number!:</h1>
+<h1>Enter a number，and I can tell you all prime numbers less than or equal to it!:</h1>
 <form th:action="@{/allprime}" method="post">
     <input type="text" name = "num">
     <input type="submit">

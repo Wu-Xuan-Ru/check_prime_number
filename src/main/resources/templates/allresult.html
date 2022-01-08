@@ -13,7 +13,7 @@
 <body>
 <span th:each="element : ${list}"  th:utext="${element.key % 10 == 0} ? ${element.key} + '&nbsp;' + '<br>' : ${element.key} + '&nbsp;'" th:style="${element.value.equals('true')} ? 'background: green'"></span>
 <br>
-<h1>Try again!:</h1>
+<h1>You Can Check Another Number!:</h1>
 <form th:action="@{/allprime}" method="post">
     <input type="text" name = "num">
     <input type="submit">
