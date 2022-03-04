@@ -16,10 +16,19 @@ public class Control {
     public String oneprime(@RequestParam("num") int num, Model model){
         List list = new ArrayList();
         list.addAll(List.of(561, 1105, 1729, 2465, 2821, 6601, 8911, 10585, 15841, 29341, 41041, 46657, 52633, 62745, 63973, 75361));
+        boolean bool = true;
 
+        model.addAttribute("num", num);
+
+        for (int i = 0; i < 15; i++) {
+            if((Integer) num == list.get(i)){
+                model.addAttribute("isprime", "It is not a prime number!");
+                return "oneresult";
+            }
+        }
 
         BigInteger temp = null;
-        boolean bool = true;
+
         for (int i = num - 1; i >= 1; i--) {
             temp = null;
             temp = BigInteger.valueOf((long)i);
@@ -42,7 +51,13 @@ public class Control {
 //            }
 //        }
 //        model.addAttribute("isprime", num + " is a prime number!");
-        model.addAttribute("isprime", bool);
+        String ans;
+        if(bool){
+            ans = "it's a prime number!";
+        }else{
+            ans = "It's not a prime number.";
+        }
+        model.addAttribute("isprime", ans);
         return "oneresult";
     }
     @GetMapping
